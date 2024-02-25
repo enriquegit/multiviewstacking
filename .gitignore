@@ -1,0 +1,21 @@
+
+**/__pycache__
+**/.ipynb_checkpoints
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+sdist/
+*.egg-info/
+*.egg
+
+# Development notebooks
+multiviewstacking/*.ipynb
+
