@@ -11,6 +11,12 @@ The `multiviewstacking` package provides the following functionalities:
 * Combine different types of first-level-learners.
 * Comes with a pre-loaded dataset with two views for testing.
 
+## :clipboard: Requirements
+
+- Python 3.9+
+- pandas >= 2.0.3
+- numpy >= 1.24.3
+- scikit-learn >= 1.3.0
 
 ## :wrench: Installation
 
