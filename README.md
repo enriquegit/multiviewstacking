@@ -13,10 +13,10 @@ The `multiviewstacking` package provides the following functionalities:
 
 ## :clipboard: Requirements
 
-- Python 3.9+
-- pandas >= 2.0.3
-- numpy >= 1.24.3
-- scikit-learn >= 1.3.0
+- Python 3.8+
+- pandas
+- numpy
+- scikit-learn >= 1.2.2
 
 ## :wrench: Installation
 

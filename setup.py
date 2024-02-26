@@ -15,6 +15,7 @@ setup(
     description = 'Python implementation of the Multi-View Stacking algorithm.',
     long_description = long_description,
     long_description_context_type = 'text/markdown',
+    url='https://github.com/enriquegit/multiviewstacking',
     author = 'Enrique Garcia-Ceja',
 	author_email = 'e.g.mx@ieee.org',
     license='MIT',
@@ -24,11 +25,11 @@ setup(
 	            'sensor fusion'],
     package_data={'multiviewstacking': ['data/*.*']},
     packages=find_packages(),
-    python_requires='>=3.9',
+    python_requires='>=3.8',
     install_requires=[
-        'pandas >= 2.0.3',
-        'numpy >= 1.24.3',
-        'scikit-learn >= 1.3.0',
+        'pandas',
+        'numpy',
+        'scikit-learn >= 1.2.2',
     ],
     classifiers = [
         "Programming Language :: Python :: 3",
