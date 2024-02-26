@@ -1,7 +1,6 @@
 # multiviewstacking: a python implementation of the Multi-View Stacking algorithm.
 
-Description text. Reference method, etc.
-
+Multi-View learning algorithms aim to learn from different representational views. For example, a movie can be represented by three views. The sequence of images, the audio, and the subtitles. Instead of concatenating the features of every view and training a single model, the Multi-View Stacking algorithm[1] builds independent (and possibly of different types) models for each view. These models are called *first-level-learners*. Then, the class and score predictions of the first-level-learners are used as features to train another model called the *meta-learner*. This approach is based on the Stacked Generalization method proposed by Wolpert D. H.[2].
 
 The `multiviewstacking` package provides the following functionalities:
 
@@ -27,8 +26,8 @@ This quick start example shows you how to train a multi-view model. For more det
 
 ```python
 import numpy as np
-from data_utils import load_example_data
-from multi_view_stacking import MultiViewStacking
+from multiviewstacking import load_example_data
+from multiviewstacking import MultiViewStacking
 from sklearn.ensemble import RandomForestClassifier
 
 # Load the built-in example dataset.
@@ -88,3 +87,11 @@ BibTex entry for LaTeX:
     url = {https://github.com/enriquegit/multiviewstacking}
 }
 ```
+
+
+## References
+
+[1] Garcia-Ceja, Enrique, et al. "Multi-view stacking for activity recognition with sound and accelerometer data." Information Fusion 40 (2018): 45-56.
+
+[2] Wolpert, D. H. (1992). Stacked generalization. Neural networks, 5(2), 241-259.
+

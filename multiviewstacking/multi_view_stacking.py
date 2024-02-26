@@ -32,7 +32,10 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
         
     first_level_learners : a list of scikit-learn classifiers, default=None.
         The list must have n elements where n is the number of views.
-        Each element needs to be a classifier from the scikit-learn library.
+        Each element can be a classifier from the scikit-learn library.
+        It also supports custom models as long as they implement the
+        fit(), predict(), and predict_proba() methods and return similar
+        values as those in scikit-learn.
         The classifier at position i is trained with the column indices
         specified at position i in views_indices. If this parameter is None,
         a RandomForestClassifier(random_state=123) will be used for each of the views.
