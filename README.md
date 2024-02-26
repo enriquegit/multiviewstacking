@@ -1,6 +1,7 @@
 # multiviewstacking: a python implementation of the Multi-View Stacking algorithm.
 
-Description text.
+Description text. Reference method, etc.
+
 
 The `multiviewstacking` package provides the following functionalities:
 
@@ -12,7 +13,7 @@ The `multiviewstacking` package provides the following functionalities:
 * Comes with a pre-loaded dataset with two views for testing.
 
 
-## Installation
+## :wrench: Installation
 
 You can install the `multiviewstacking` package with:
 
@@ -20,11 +21,11 @@ You can install the `multiviewstacking` package with:
 pip install multiviewstacking
 ```
 
-## Quick start example
+## :rocket: Quick start example
 
-This quick start example shows you how to train a multi-view model. For more detailed tutorials, check the jupyter notebooks in the `examples` folder.
+This quick start example shows you how to train a multi-view model. For more detailed tutorials, check the jupyter notebooks in the [/examples](https://github.com/enriquegit/multiviewstacking/tree/main/examples) directory.
 
-```{python}
+```python
 import numpy as np
 from data_utils import load_example_data
 from multi_view_stacking import MultiViewStacking
@@ -37,7 +38,7 @@ from sklearn.ensemble import RandomForestClassifier
 The built-in dataset contains features for two views (audio, accelerometer) for activity recognition.
 The `load_example_data()` method returns a tuple with the train and test sets. It also returns the column indices for the two views and a LabelEnconder to convert the classes from integers back to strings.
 
-```{python}
+```python
 # Define two first-level-learners and the meta-learner.
 # All of them are Random Forests but they can be any other model.
 m_v1 = RandomForestClassifier(n_estimators=50, random_state=123)
@@ -54,7 +55,7 @@ The `view_indices` parameter is a list of lists. Each list specifies the column 
 In this case `ind1` stores the indices of the audio features and `ind2` contains the indices of the accelerometer features.
 Th `first_level_learners` parameter is a list of scikit-learn models or any other custom models. The `meta-learnr` specifies the model to be used as the meta-learner.
 
-```{python}
+```python
 # Train the model.
 model.fit(xtrain, ytrain)
 
