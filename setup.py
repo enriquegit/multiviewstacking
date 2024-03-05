@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-# Long description from README.md
+# Long description from README_pypi.md
 current_directory = os.path.dirname(os.path.abspath(__file__))
 try:
     with open(os.path.join(current_directory, 'README_pypi.md'), encoding='utf-8') as f:
@@ -11,10 +11,10 @@ except Exception:
 
 setup(
     name='multiviewstacking',
-    version='0.0.2',
+    version='0.0.3',
     description = 'Python implementation of the Multi-View Stacking algorithm.',
     long_description = long_description,
-    long_description_context_type = 'text/markdown',
+    long_description_content_type = 'text/markdown',
     url='https://github.com/enriquegit/multiviewstacking',
     author = 'Enrique Garcia-Ceja',
 	author_email = 'e.g.mx@ieee.org',

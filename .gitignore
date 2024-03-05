@@ -19,3 +19,6 @@ sdist/
 # Development notebooks
 multiviewstacking/*.ipynb
 my_tests/
+
+# Temporal
+docs/
