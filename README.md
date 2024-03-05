@@ -1,4 +1,4 @@
-# multiviewstacking: a python implementation of the Multi-View Stacking algorithm <img src="https://github.com/enriquegit/multiviewstacking/blob/main/img/logo60-50.png?raw=true" align="right" width="200px " alt=""/>
+# multiviewstacking: a python implementation of the Multi-View Stacking algorithm <img src="https://github.com/enriquegit/multiviewstacking/blob/main/img/logo60-50.png?raw=true" align="right" width="300px " alt=""/>
 
 
 
