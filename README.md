@@ -1,4 +1,4 @@
-<img src="[https://github.com/enriquegit/multiviewstacking/blob/main/img/logo60-50.png?raw=true](https://github.com/enriquegit/multiviewstacking/blob/main/img/logo60-50.png?raw=true)" align="right" width="170px " alt=""/>
+<img src="https://github.com/enriquegit/multiviewstacking/blob/main/img/logo60-50.png?raw=true" align="right" width="170px " alt=""/>
 
 # multiviewstacking: a python implementation of the Multi-View Stacking algorithm.
 
