@@ -60,7 +60,7 @@ model = MultiViewStacking(views_indices = [ind1, ind2],
 
 The `view_indices` parameter is a list of lists. Each list specifies the column indices of the train set for each view.
 In this case `ind1` stores the indices of the audio features and `ind2` contains the indices of the accelerometer features.
-Th `first_level_learners` parameter is a list of scikit-learn models or any other custom models. The `meta-learnr` specifies the model to be used as the meta-learner.
+Th `first_level_learners` parameter is a list of scikit-learn models or any other custom models. The `meta-learner` specifies the model to be used as the meta-learner.
 
 ```python
 # Train the model.
