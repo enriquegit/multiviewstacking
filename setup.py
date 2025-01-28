@@ -11,7 +11,7 @@ except Exception:
 
 setup(
     name='multiviewstacking',
-    version='0.2.0',
+    version='0.5.0',
     description = 'Python implementation of the Multi-View Stacking algorithm.',
     long_description = long_description,
     long_description_content_type = 'text/markdown',

@@ -81,7 +81,6 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
 
         if first_level_learners is None:
             # Set Random Forest as default learner but raise a warning.
-            warnings.warn("No first-level-learners were defined. Using Random Forest for all views as default.")
             self.first_level_learners = [RandomForestClassifier(random_state=123) for i in range(len(self.views_indices))]
         else:
             self.first_level_learners = first_level_learners
