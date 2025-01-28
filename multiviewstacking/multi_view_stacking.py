@@ -83,6 +83,25 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
         self.k = k
         self.random_state = random_state
     
+    def __str__(self):
+        """Override __str__ to print user friendly information about the class instance.
+        """
+        
+        learnersInfo = ""
+        count = 1;
+        for obj in self.first_level_learners:
+            learnersInfo = learnersInfo + " First-level-learner " + str(count) + " = " + str(obj) + "\n"
+            count = count + 1
+
+        return f"MultiViewStacking:\n k = {self.k} \n Number of views =  {len(self.views_indices)}\n Meta-learner = {self.meta_learner}\n" + learnersInfo
+
+
+    def __repr__(self):
+        """Override __repr__ to print user friendly information about the class instance.
+        """
+        
+        return self.__str__()
+
     def __validate_parameters(self, X):
         """Validate parameters passed in __init__.
            
