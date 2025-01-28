@@ -78,7 +78,14 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
                  random_state = 123):
         
         self.views_indices = views_indices
-        self.first_level_learners = first_level_learners
+
+        if first_level_learners is None:
+            # Set Random Forest as default learner but raise a warning.
+            warnings.warn("No first-level-learners were defined. Using Random Forest for all views as default.")
+            self.first_level_learners = [RandomForestClassifier(random_state=123) for i in range(len(self.views_indices))]
+        else:
+            self.first_level_learners = first_level_learners
+        
         self.meta_learner = meta_learner
         self.k = k
         self.random_state = random_state
@@ -135,12 +142,7 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
         
         # Validate that the number of indices lists is equal to the number of first-level-learners.
         nviews = len(self.views_indices)
-        if self.first_level_learners is None:
-            # Set Random Forest as default learner but raise a warning.
-            warnings.warn("No first-level-learners were defined. Using Random Forest as default.")
-            self.first_level_learners = [RandomForestClassifier(random_state=123) for i in range(nviews)]
-        else:
-            if nviews != len(self.first_level_learners):
+        if nviews != len(self.first_level_learners):
                 raise Exception("The number of views differs from the number of first_level_learners.")
         
     
