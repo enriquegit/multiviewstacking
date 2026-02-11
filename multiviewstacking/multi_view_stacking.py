@@ -143,7 +143,27 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
         nviews = len(self.views_indices)
         if nviews != len(self.first_level_learners):
                 raise Exception("The number of views differs from the number of first_level_learners.")
-        
+
+    def _validate_learners(self):
+        """Validate that all learners implement predict_proba."""
+        learners = self.first_level_learners + [self.meta_learner]
+        for i, model in enumerate(learners):
+            name = (
+                f"first_level_learners[{i}]"
+                if i < len(self.first_level_learners)
+                else "meta_learner"
+            )
+
+            if not hasattr(model, "fit") or not callable(model.fit):
+                raise TypeError(f"{name} must implement a fit(X, y) method.")
+
+            # Check for predict_proba
+            if not hasattr(model, "predict_proba") or not callable(model.predict_proba):
+                raise AttributeError(
+                    f"{name} does not implement predict_proba(). "
+                    "MultiViewStacking requires classifiers that support probability outputs."
+                )
+
     
     def fit(self, X, y):
         """Build a Multi-View Stacking classifier from the training set (X, y).
@@ -164,6 +184,8 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
             Fitted estimator.
         """
         
+        # Validate that the models implement predict_proba()
+        self._validate_learners()
         
         # Check that X and y have correct shape.
         X, y = check_X_y(X, y)
