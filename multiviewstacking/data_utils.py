@@ -1,4 +1,10 @@
-import pkg_resources
+try:
+    # Preferred in Python 3.9+
+    import importlib.resources as importlib_resources
+except ImportError:
+    # Fallback for older versions
+    import importlib_resources
+
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
@@ -38,12 +44,10 @@ def load_example_data():
     
     """
 
+   # Read file.
+    with importlib_resources.files(__package__).joinpath("data/htad.csv").open("rb") as stream:
+        df = pd.read_csv(stream, encoding="latin-1")
 
-    stream = pkg_resources.resource_stream(__name__, 'data/htad.csv')
-
-    # Read file.
-    #df = pd.read_csv('htad.csv')
-    df = pd.read_csv(stream, encoding='latin-1')
 
     # Encode labels into integers.
     le = LabelEncoder()

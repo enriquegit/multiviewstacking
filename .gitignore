@@ -22,3 +22,6 @@ my_tests/
 
 # Temporal
 docs/
+
+# Misc.
+examples/anaconda_projects/*
