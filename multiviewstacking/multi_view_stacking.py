@@ -88,6 +88,8 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
         self.meta_learner = meta_learner
         self.k = k
         self.random_state = random_state
+
+        self._validate_learners()
     
     def __str__(self):
         """Override __str__ to print user friendly information about the class instance.
@@ -145,7 +147,7 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
                 raise Exception("The number of views differs from the number of first_level_learners.")
 
     def _validate_learners(self):
-        """Validate that all learners implement predict_proba."""
+        """Validate that all learners implement predict_proba and ensure the number of views matches the number of first-level learners."""
         learners = self.first_level_learners + [self.meta_learner]
         for i, model in enumerate(learners):
             name = (
@@ -162,6 +164,13 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
                 raise AttributeError(
                     f"{name} does not implement predict_proba(). "
                     "MultiViewStacking requires classifiers that support probability outputs."
+                )
+            
+        if self.views_indices is not None and self.first_level_learners is not None:
+            if len(self.views_indices) != len(self.first_level_learners):
+                raise ValueError(
+                    f"Number of views ({len(self.views_indices)}) must match "
+                    f"number of first-level learners ({len(self.first_level_learners)})."
                 )
 
     
@@ -184,12 +193,34 @@ class MultiViewStacking(BaseEstimator, ClassifierMixin):
             Fitted estimator.
         """
         
-        # Validate that the models implement predict_proba()
+        # Validate learners early
         self._validate_learners()
-        
+
         # Check that X and y have correct shape.
         X, y = check_X_y(X, y)
         
+        # Ensure views_indices are defined and valid
+        if self.views_indices is None:
+            raise ValueError(
+                "views_indices must be defined before fitting the model. "
+                "Use a list of index lists or tuples for each view."
+            )
+
+        n_features = X.shape[1]
+        for v_idx, view in enumerate(self.views_indices):
+            # Convert tuple ranges to explicit lists (if needed)
+            if isinstance(view, tuple):
+                view = list(range(view[0], view[1] + 1))
+                self.views_indices[v_idx] = view
+
+            if max(view) >= n_features:
+                raise ValueError(
+                    f"View {v_idx} contains invalid column indices {view}. "
+                    f"Input X has only {n_features} columns."
+                )
+
+
+
         # If X is a data frame, convert it to numpy.
         if isinstance(X, pd.DataFrame):
             X = X.values
