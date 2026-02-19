@@ -69,7 +69,7 @@ model.fit(xtrain, ytrain)
 # Make predictions on the test set.
 preds = model.predict(xtest)
 
-# Compuet the accuracy.
+# Compute the accuracy.
 np.sum(ytest == preds) / len(ytest)
 ```
 
