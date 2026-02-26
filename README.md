@@ -102,5 +102,3 @@ BibTex entry for LaTeX:
 [1] Garcia-Ceja, Enrique, et al. "Multi-view stacking for activity recognition with sound and accelerometer data." Information Fusion 40 (2018): 45-56.
 
 [2] Wolpert, D. H. (1992). Stacked generalization. Neural networks, 5(2), 241-259.
-
-
