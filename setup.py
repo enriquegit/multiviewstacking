@@ -11,7 +11,7 @@ except Exception:
 
 setup(
     name='multiviewstacking',
-    version='0.7.3',
+    version='0.7.4',
     description = 'Python implementation of the Multi-View Stacking algorithm.',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
@@ -25,11 +25,11 @@ setup(
 	            'sensor fusion'],
     package_data={'multiviewstacking': ['data/*.*']},
     packages=find_packages(),
-    python_requires='>=3.9',
+    python_requires='>=3.11.0',
     install_requires=[
-        'pandas',
-        'numpy>=2.0',
-        'scikit-learn >= 1.2.2',
+        'pandas >= 3.0.0',
+        'numpy >= 2.0.2',
+        'scikit-learn >= 1.5.2',
     ],
     classifiers = [
         "Programming Language :: Python :: 3",
