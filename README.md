@@ -15,7 +15,7 @@ The `multiviewstacking` package provides the following functionalities:
 
 ## :clipboard: Requirements
 
-- Python 3.11.0+
+- Python >= 3.11.0
 - pandas >= 3.0.0
 - numpy >= 2.0.2
 - scikit-learn >= 1.5.2
@@ -102,4 +102,3 @@ BibTex entry for LaTeX:
 [1] Garcia-Ceja, Enrique, et al. "Multi-view stacking for activity recognition with sound and accelerometer data." Information Fusion 40 (2018): 45-56.
 
 [2] Wolpert, D. H. (1992). Stacked generalization. Neural networks, 5(2), 241-259.
-
