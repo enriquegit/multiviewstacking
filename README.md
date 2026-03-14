@@ -73,6 +73,13 @@ preds = model.predict(xtest)
 np.sum(ytest == preds) / len(ytest)
 ```
 
+## Datasets for Multi-View Learning
+
+Below there is a list of other datasets suitable for Multi-View learning models. Note that you may need to pre-process them and select the appropriate views. 
+
+- **Multiple Features:** Handwritten digits represented by 6 features categories (views). https://doi.org/10.24432/C5HC70
+- **HAR70+:** Human Activity Recognition data collected with two 3-axial accelerometers. Each accelerometer can serve as a view. https://doi.org/10.24432/C5CW3D
+- **UNSW-NB15:** Contains examples of network attacks for cybersecurity tasks. The features can be categorized into different views such as flow features, content features, time features, etc.  https://research.unsw.edu.au/projects/unsw-nb15-dataset
 
 
 ## Citation
