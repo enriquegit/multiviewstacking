@@ -11,7 +11,7 @@ except Exception:
 
 setup(
     name='multiviewstacking',
-    version='0.7.4',
+    version='0.7.5',
     description = 'Python implementation of the Multi-View Stacking algorithm.',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
@@ -27,8 +27,8 @@ setup(
     packages=find_packages(),
     python_requires='>=3.11.0',
     install_requires=[
-        'pandas >= 3.0.0',
-        'numpy >= 2.0.2',
+        'pandas >= 2.0.0',
+        'numpy >= 1.26.4',
         'scikit-learn >= 1.5.2',
     ],
     classifiers = [
