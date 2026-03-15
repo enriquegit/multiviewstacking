@@ -22,7 +22,7 @@ You can contribute in several ways:
 First, fork the repository and clone it locally:
 
 ```bash
-git clone https://github.com/<your-username>/multiviewstacking.git
+git clone https://github.com/enriquegit/multiviewstacking.git
 cd multiviewstacking
 ```
 
@@ -105,7 +105,7 @@ regressors using a meta-regression model.
 Parameters
 ----------
 base_learners : list
-    Regressors trained on each view.
+    List of regressors for each view.
 
 meta_learner : estimator
     Regression model used to combine predictions.
@@ -123,7 +123,7 @@ Tests should cover:
 * Regression fitting
 * Prediction shape
 * Compatibility with multi-view input
-* Use the included HTAD dataset.
+* Use the included HTAD dataset (for classification).
 
 Run tests with:
 
