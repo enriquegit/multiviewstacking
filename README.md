@@ -87,19 +87,19 @@ Below there is a list of other datasets suitable for Multi-View learning models.
 To cite this package use:
 
 ```{r}
-Enrique Garcia-Ceja (2024). multiviewstacking: A python implementation of the Multi-View Stacking algorithm.
-Python package https://github.com/enriquegit/multiviewstacking
+Garcia-Ceja, E. (2026). multiviewstacking: A Python Package for Training Multi-View Stacking Classifiers. Journal of Open Research Software, 14(1).
 ```
 
 BibTex entry for LaTeX:
 
 ```{r}
-@Manual{MVS,
-    title = {multiviewstacking: A python implementation of the Multi-View Stacking algorithm},
-    author = {Enrique Garcia-Ceja},
-    year = {2024},
-    note = {Python package},
-    url = {https://github.com/enriquegit/multiviewstacking}
+@article{garciaceja2026,
+  title={multiviewstacking: A Python Package for Training Multi-View Stacking Classifiers},
+  author={Garcia-Ceja, Enrique},
+  journal={Journal of Open Research Software},
+  volume={14},
+  number={1},
+  year={2026}
 }
 ```
 
@@ -109,3 +109,8 @@ BibTex entry for LaTeX:
 [1] Garcia-Ceja, Enrique, et al. "Multi-view stacking for activity recognition with sound and accelerometer data." Information Fusion 40 (2018): 45-56.
 
 [2] Wolpert, D. H. (1992). Stacked generalization. Neural networks, 5(2), 241-259.
+
+## Acknowledgements
+
+This work was supported in part by the Fondo Regional para la Innovación Digital en América Latina y el Caribe (FRIDA), coordinated by LACNIC.
+
